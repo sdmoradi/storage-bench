@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: dbench
-        image: docker.iranrepo.ir/sdmoradi/fio-bench:latest
+        image: sdmoradi/fio-bench:latest
         imagePullPolicy: IfNotPresent
         env:
 
