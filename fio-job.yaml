@@ -6,7 +6,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   generateName: dbench-
-  namespace: test
 spec:
   template:
     spec:
