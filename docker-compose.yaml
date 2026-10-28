@@ -1,0 +1,24 @@
+
+services:
+  storage-bench:
+    image: sdmoradi/fio-bench:latest
+    container_name: storage-bench
+    environment:
+      BENCH_PATH: /mnt/benchmark
+      DBENCH_MOUNTPOINT: /data
+      DBENCH_TYPE: ${DBENCH_TYPE:-detailed}
+      FIO_SIZE: ${FIO_SIZE:-2G}
+      FIO_DIRECT: ${FIO_DIRECT:-1}
+      FIO_NUMJOBS: ${FIO_NUMJOBS:-1}
+      FIO_OFFSET_INCREMENT: ${FIO_OFFSET_INCREMENT:-250M}
+      FIO_IOENGINE: ${FIO_IOENGINE:-libaio}
+      OPTIONS: ${OPTIONS:-}
+      CUSTOM: ${CUSTOM:-}
+    volumes:
+      - type: bind
+        source: /mnt/benchmark
+        target: /data
+        bind:
+          create_host_path: false
+    restart: "no"
+
