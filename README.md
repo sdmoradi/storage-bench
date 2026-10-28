@@ -16,29 +16,29 @@
 ### HOW TO RUN IT
 
 ```angular2html
-saeed@ThinkBook# git clone https://github.com/sdmoradi/storage-bench.git
+git clone https://github.com/sdmoradi/storage-bench.git
 
-saeed@ThinkBook# cd storage-bench
+cd storage-bench
 ```
 
 * Ensure the storageclasses is already installed.
 * Create an PVC/PV of desired storageclass beforehand
 * Edit storageclass name in dbech-pvc.yaml file
 ```angular2html
-saeed@ThinkBook# kubectl create -f dbench-pvc.yaml
+kubectl create -f dbench-pvc.yaml
 ```
 
 * Deploy the fio job manifest
 
 ```angular2html
-saeed@ThinkBook# kubectl create -f fio-job.yaml
+kubectl create -f fio-job.yaml
 ```
 
 ### HOW TO CHECK PROGRESS & VIEW RESULTS
 
 * Check the logs of the ongoing/completed job
 ```
-saeed@ThinkBook# kubectl logs -f dbench-njlxh-bslsv
+kubectl logs -f dbench-njlxh-bslsv
 
 Working dir: /data
 
